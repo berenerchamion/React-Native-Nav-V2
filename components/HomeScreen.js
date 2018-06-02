@@ -4,14 +4,45 @@ import {
   View,
   TouchableOpacity,
   Platform,
+  Image,
+  Button,
 } from 'react-native';
 import {styles} from '../helpers/styles'
 
+class HOBLogo extends React.Component {
+  render(){
+    return(
+      <Image
+        source={require('../assets/Beren_HR_80x78.png')}
+        style={{width: 30, height: 30}}
+        />
+    )
+  }
+}
+
 class HomeScreen extends React.Component {
 
-  static navigationOptions = {
-    title: 'Home',
-}
+  static navigationOptions = ({ navigation }) => {
+    return{
+      headerTitle: 'My Cool Nav Stuff',
+      headerRight:(
+        <TouchableOpacity
+          onPress={() => navigation.navigate('MyModal')}
+          title="Info"
+          color="#fff"
+        >
+          <Image
+            source={require('../assets/Beren_HR_80x78.png')}
+            style={{width: 30, height: 30}}
+          />
+        </TouchableOpacity>
+      ),
+    }
+  }
+
+  state = {
+    count: 0,
+  }
 
   render(){
     return (
