@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   View,
   Text,
-  Button,
   Platform,
   TouchableOpacity,
 } from 'react-native'
