@@ -24,21 +24,8 @@ const Tabs = createBottomTabNavigator(
         } else if (routeName === 'Settings') {
           iconName = `ios-options${focused ? '' : '-outline'}`;
         }
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
         return <Ionicons name={iconName} size={25} color={tintColor} />;
       },
-      headerTitle: 'My Cool Nav Stuff',
-      headerRight:(
-        <TouchableOpacity
-          onPress={() => navigation.navigate('MyModal')}
-          title="Info"
-          color="#fff"
-        >
-          <HOBLogo />
-        </TouchableOpacity>
-      ),
     }),
     tabBarOptions: {
       activeTintColor: 'orange',
@@ -59,8 +46,18 @@ const MainStack = createStackNavigator(
       headerStyle: {
         backgroundColor: orange,
       },
+  
       headerTintColor: tan,
       headerTitle: 'My Cool Nav Stuff',
+      headerRight:(
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('MyModal')}
+          title="Info"
+          color="#fff"
+        >
+          <HOBLogo />
+        </TouchableOpacity>
+      ),
       headerTitleStyle: {
         fontWeight: 'bold',
       },
