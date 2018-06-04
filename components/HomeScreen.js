@@ -8,17 +8,7 @@ import {
   Button,
 } from 'react-native';
 import {styles} from '../helpers/styles'
-
-class HOBLogo extends React.Component {
-  render(){
-    return(
-      <Image
-        source={require('../assets/Beren_HR_80x78.png')}
-        style={{width: 30, height: 30}}
-        />
-    )
-  }
-}
+import HOBLogo from './HOBLogo'
 
 class HomeScreen extends React.Component {
 
@@ -31,10 +21,7 @@ class HomeScreen extends React.Component {
           title="Info"
           color="#fff"
         >
-          <Image
-            source={require('../assets/Beren_HR_80x78.png')}
-            style={{width: 30, height: 30}}
-          />
+          <HOBLogo />
         </TouchableOpacity>
       ),
     }

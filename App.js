@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from 'react-native'
+import { Platform, TouchableOpacity } from 'react-native'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 import HomeScreen from './components/HomeScreen'
 import DetailsScreen from './components/DetailsScreen'
@@ -7,6 +7,7 @@ import ModalScreen from './components/ModalScreen'
 import SettingsScreen from './components/SettingsScreen'
 import {orange, tan, green, white, gray} from './helpers/colors.js'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import HOBLogo from './components/HOBLogo'
 
 const Tabs = createBottomTabNavigator(
   {
@@ -28,6 +29,16 @@ const Tabs = createBottomTabNavigator(
         // icon component from react-native-vector-icons
         return <Ionicons name={iconName} size={25} color={tintColor} />;
       },
+      headerTitle: 'My Cool Nav Stuff',
+      headerRight:(
+        <TouchableOpacity
+          onPress={() => navigation.navigate('MyModal')}
+          title="Info"
+          color="#fff"
+        >
+          <HOBLogo />
+        </TouchableOpacity>
+      ),
     }),
     tabBarOptions: {
       activeTintColor: 'orange',
@@ -49,6 +60,7 @@ const MainStack = createStackNavigator(
         backgroundColor: orange,
       },
       headerTintColor: tan,
+      headerTitle: 'My Cool Nav Stuff',
       headerTitleStyle: {
         fontWeight: 'bold',
       },
